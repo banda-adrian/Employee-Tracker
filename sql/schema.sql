@@ -4,12 +4,20 @@ DROP DATABASE IF EXISTS employeeDB;
 CREATE DATABASE employeeDB;
 USE employeeDB;
 
+CREATE TABLE employee (
+  id INT NOT NULL,
+  first_name VARCHAR(30),  
+  last_name VARCHAR(30),
+  role_id INT,
+  manager_id INT,
+  PRIMARY KEY (id)
+);
+
 CREATE TABLE department (
   id INT PRIMARY KEY,
   names VARCHAR(30),
   PRIMARY KEY (id)
 );
-
 
 CREATE TABLE roles (
   id INT PRIMARY KEY,
@@ -19,12 +27,3 @@ CREATE TABLE roles (
   PRIMARY KEY (id)
 );
 
-
-CREATE TABLE employee (
-  id INT PRIMARY KEY,
-  first_name VARCHAR(30),  
-  last_name VARCHAR(30),
-  role_id INT,
-  manager_id INT,
-  PRIMARY KEY (id),
-);
