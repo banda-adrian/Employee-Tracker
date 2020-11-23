@@ -67,27 +67,6 @@ const connection = mysql.createConnection({
       });
   }
 
-  function viewAllEmployees() {
-  
-    const query =
-    `SELECT employee.id, employee.first_name, employee.last_name, roles.title, department.names AS department, roles.salary, CONCAT(m.first_name, ' ', m.last_name) AS manager
-    FROM employee e
-    LEFT JOIN role r
-    ON e.role_id = r.id
-    LEFT JOIN department d
-    ON d.id = r.department_id
-    LEFT JOIN employee m
-    ON m.id = e.manager_id`
-  
-    connection.query(query, function (err, res) {
-      if (err) throw err;
-  
-      console.table(res);
-  
-      starterQuestions();
-    });
-  }
-
   //Adding Employee
   function addEmployee() {
 
@@ -244,3 +223,31 @@ const connection = mysql.createConnection({
           });
       });
   }
+
+  function viewAllEmployees() {
+  
+    const query =
+    `SELECT e.first_name, e.last_name 
+    FROM employee e` 
+    +
+    `SELECT e.first_name, e.last_name 
+    FROM employee e`
+  
+    connection.query(query, function (err, res) {
+      if (err) throw err;
+  
+      console.table(res);
+  
+      starterQuestions();
+    });
+  }
+
+  // console.table([
+  //   {
+  //     name: 'foo',
+  //     age: 10
+  //   }, {
+  //     name: 'bar',
+  //     age: 20
+  //   }
+  // ]);
