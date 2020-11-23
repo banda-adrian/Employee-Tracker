@@ -1,0 +1,26 @@
+Questions
+
+What would you like to do?
+View all employees
+View all employees by department
+View all employees by Manager **
+
+View all roles 
+
+View all departments
+
+Add Employee
+
+What is the employes first name? (input)
+What is the employes last name? (input)
+What is the employess role? (choices)
+Sales Lead 
+Sales Person
+Lead Engineer 
+Software Engineer
+Account Manger 
+Accountant 
+Legal Team Lead
+Who is the Manager?
+ 
+Whos is the Employees Manager? (Choices)
