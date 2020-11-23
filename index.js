@@ -216,4 +216,31 @@ const connection = mysql.createConnection({
           });
       }
 
+// ADDING Department
+  function addDepartment() {
 
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "department_title",
+          message: "What is the Department title?"
+        },
+      ])
+      .then(function (answer) {
+  
+        const query = `INSERT INTO department SET ?`
+
+        connection.query(query,
+          {
+            names: answer.department_title
+          },
+          function (err, res) {
+            if (err) throw err;
+  
+            // console.table(res);
+  
+            starterQuestions();
+          });
+      });
+  }
