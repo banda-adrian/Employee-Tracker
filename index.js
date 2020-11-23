@@ -10,6 +10,7 @@ const connection = mysql.createConnection({
     database: "employeeDB"
   });  
 
+  // Starts starterQuestions
   connection.connect(function (err) {
     if (err) throw err;
 
@@ -195,7 +196,7 @@ const connection = mysql.createConnection({
           });
       }
 
-// ADDING Department
+// Adding Department
   function addDepartment() {
 
     inquirer
@@ -224,23 +225,48 @@ const connection = mysql.createConnection({
       });
   }
 
+  // View All Employees
   function viewAllEmployees() {
   
     const query =
-    `SELECT e.first_name, e.last_name 
-    FROM employee e` 
-    +
-    `SELECT e.first_name, e.last_name 
-    FROM employee e`
+    `SELECT e.first_name AS FirstName, 
+    e.last_name AS LastName, 
+    r.title AS Title, 
+    d.names AS Department, 
+    r.salary AS Salary
+    FROM employee e
+    LEFT JOIN roles r
+    ON e.role_id = r.id
+    LEFT JOIN department d
+    ON d.id = r.department_id`
   
     connection.query(query, function (err, res) {
       if (err) throw err;
-  
+
       console.table(res);
   
       starterQuestions();
     });
   }
+
+  // // View All Employees by Deparment
+  // function viewAllEmployeesByDepartment() {
+  
+  //   const query =
+  //   `SELECT e.first_name, e.last_name 
+  //   FROM employee e` 
+  //   +
+  //   `SELECT e.first_name, e.last_name 
+  //   FROM employee e`
+  
+  //   connection.query(query, function (err, res) {
+  //     if (err) throw err;
+  
+  //     console.table(res);
+  
+  //     starterQuestions();
+  //   });
+  // }
 
   // console.table([
   //   {
