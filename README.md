@@ -2,33 +2,25 @@
 
 ## Table of Contents
 * [Introduction](#introduction) 
-* [How it Works](#how-it-works)
+<!-- * [How it Works](#how-it-works) -->
 * [Demo Images](#demo-images)
 * [Contact](#contact)
 * [Links](#links)
 
 ## Introduction
---
+An employee tracker that lets you add Employees, Departments, Roles as well as view them when needed.
 
-## How it Works
---
+<!-- ## How it Works -->
+
 
 
 ## Demo Images
 
 ![screenshot](assets/images/template.png) 
 
-![screenshot](assets/images/template.png)  
-
-![screenshot](assets/images/template.png)  
-
-![screenshot](assets/images/template.jpg)
-
-
-
 ## Contact
-If you want to contact me you can reach me at ***
+If you want to contact me you can reach me at banda_adrian@outlook.com
 
 ## Links
 [Demonstration Video](link)  
-[Github](link)
+[Github Repository](https://github.com/banda-adrian/Employee-Tracker.git)
