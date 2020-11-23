@@ -155,4 +155,65 @@ const connection = mysql.createConnection({
       });
   }
 
+    //Adding Role
+    function addRole() {
+
+      const query =
+        `SELECT d.id, d.names
+        FROM department d`
+    
+      connection.query(query, function (err, res) {
+        if (err) throw err;
+    
+        const departmentChoices = res.map(({ id, names }) => ({
+          value: id, names: `${id} ${names}`
+        }));
+    
+        // console.table(res);
+    
+        promptRoleQuestions(departmentChoices);
+         });
+      }
+    
+      function promptRoleQuestions(departmentChoices) {
+    
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "role_title",
+              message: "What is the Role title?"
+            },
+            {
+              type: "input",
+              name: "role_salary",
+              message: "What is the Role Salary"
+            },
+            {
+              type: "list",
+              name: "department_id",
+              message: "What is the Department?",
+              choices: departmentChoices
+            },
+          ])
+          .then(function (answer) {
+      
+            const query = `INSERT INTO roles SET ?`
+    
+            connection.query(query,
+              {
+                title: answer.role_title,
+                salary: answer.role_salary,
+                department_id: answer.department_id
+              },
+              function (err, res) {
+                if (err) throw err;
+      
+                // console.table(res);
+      
+                starterQuestions();
+              });
+          });
+      }
+
 
