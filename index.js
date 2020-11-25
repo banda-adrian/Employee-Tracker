@@ -46,7 +46,7 @@ function starterQuestions() {
         "Add Department",
         "View all Employees",
         "View all Roles",
-        "View all departments",
+        "View all Departments",
         // "View all employees by Department",
         // "View all employees by Manager",
         "Exit"]
@@ -71,7 +71,7 @@ function starterQuestions() {
         case "View all Roles":
           viewAllRoles();
           break;
-        case "View all departments":
+        case "View all Departments":
           viewAllDepartments();
           break;
         // case "View all employees by department":
@@ -150,7 +150,7 @@ function employeeInsert(roleChoices) {
       {
         type: "input",
         name: "manager_id",
-        message: "What is the managers ID?"
+        message: "What is the managers id?"
       },
       {
         type: "list",
@@ -234,7 +234,7 @@ function promptRoleQuestions(departmentChoices) {
         function (err, res) {
           if (err) throw err;
 
-          console.table(res);
+          // console.table(res);
 
           starterQuestions();
         });
@@ -263,12 +263,14 @@ function addDepartment() {
         function (err, res) {
           if (err) throw err;
 
-          console.table(res);
+          // console.table(res);
 
           starterQuestions();
         });
     });
 }
+
+// 
 
 // View All Employees
 function viewAllEmployees() {
