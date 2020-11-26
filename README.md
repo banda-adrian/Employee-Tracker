@@ -12,8 +12,6 @@ An employee tracker that lets you add Employees, Departments, Roles as well as v
 
 <!-- ## How it Works -->
 
-
-
 ## Demo Images
 
 ![screenshot](assets/images/template.png) 
@@ -23,4 +21,4 @@ If you want to contact me you can reach me at banda_adrian@outlook.com
 
 ## Links
 [Demonstration Video](link)  
-[Github Repository](https://github.com/banda-adrian/Employee-Tracker.git)
+[Github Profile](https://github.com/banda-adrian)
